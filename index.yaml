@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  kubean:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-07-11T07:33:45.923730163Z"
+    description: A Helm chart for kubean
+    digest: c49387239ba9b6f948000e1065dea3bb4df9eaa3c4acd2a1d164fdbd7728da3f
+    icon: https://gitlab.daocloud.cn/uploads/-/system/project/avatar/1281/bean.png
+    name: kubean
+    type: application
+    urls:
+    - https://github.com/kubean-io/kubean-helm-chart/releases/download/kubean-v0.0.0/kubean-v0.0.0.tgz
+    version: v0.0.0
+generated: "2022-07-11T07:33:45.923735363Z"

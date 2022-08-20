@@ -4,7 +4,7 @@ metadata:
   name: componentsversion-global
 spec:
   kubespray: "v2.19.0"
-  kubean: "v0.1.1"
+  kubean: "v0.1.2"
   docker:
     - os: "centos7"
       versionRange: []

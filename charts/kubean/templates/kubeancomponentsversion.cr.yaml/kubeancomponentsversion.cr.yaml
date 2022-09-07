@@ -6,9 +6,33 @@ spec:
   kubespray: "ad7cefa"
   kubean: "v0.2.1"
   docker:
-    - os: "centos7"
-      versionRange: []
-      containerdRange: []
+    - os: "redhat-7"
+      defaultVersion: 20.10
+      versionRange:
+        - latest
+        - "18.09"
+        - "19.03"
+        - "20.10"
+        - stable
+        - edge
+    - os: "debian"
+      defaultVersion: 20.10
+      versionRange:
+        - latest
+        - "18.09"
+        - "19.03"
+        - "20.10"
+        - stable
+        - edge
+    - os: "ubuntu"
+      defaultVersion: 20.10
+      versionRange:
+        - latest
+        - "18.09"
+        - "19.03"
+        - "20.10"
+        - stable
+        - edge
   items:
     - name: "cni"
       defaultVersion: "v1.1.1"

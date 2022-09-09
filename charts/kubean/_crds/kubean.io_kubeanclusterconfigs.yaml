@@ -6,14 +6,14 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: kubeancomponentsversions.kubean.io
+  name: kubeanclusterconfigs.kubean.io
 spec:
   group: kubean.io
   names:
-    kind: KuBeanComponentsVersion
-    listKind: KuBeanComponentsVersionList
-    plural: kubeancomponentsversions
-    singular: kubeancomponentsversion
+    kind: KubeanClusterConfig
+    listKind: KubeanClusterConfigList
+    plural: kubeanclusterconfigs
+    singular: kubeanclusterconfig
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -38,6 +38,41 @@ spec:
             type: object
           spec:
             properties:
+              airGapConfig:
+                properties:
+                  filesRepo:
+                    type: string
+                  hostsMap:
+                    items:
+                      properties:
+                        address:
+                          type: string
+                        domain:
+                          type: string
+                      type: object
+                    type: array
+                  registryRepo:
+                    type: string
+                  yumRepo:
+                    items:
+                      type: string
+                    type: array
+                type: object
+              components:
+                items:
+                  properties:
+                    defaultVersion:
+                      type: string
+                    name:
+                      type: string
+                    versionRange:
+                      items:
+                        type: string
+                      type: array
+                  required:
+                  - name
+                  type: object
+                type: array
               docker:
                 items:
                   properties:
@@ -53,32 +88,31 @@ spec:
                   - os
                   type: object
                 type: array
-              items:
-                items:
-                  properties:
-                    defaultVersion:
-                      type: string
-                    name:
-                      type: string
-                    versionRange:
-                      items:
-                        type: string
-                      type: array
-                  required:
-                  - name
-                  type: object
-                type: array
-              kubean:
-                description: Kubean , the tag of kubean-io
+              kubeanVersion:
+                description: KubeanVersion , the tag of kubean-io
                 type: string
-              kubespray:
-                description: Kubespray , the tag of kubespray
+              kubesprayImage:
+                type: string
+              kubesprayVersion:
                 type: string
             type: object
           status:
             properties:
-              offline:
+              airGap:
                 properties:
+                  components:
+                    items:
+                      properties:
+                        name:
+                          type: string
+                        versionRange:
+                          items:
+                            type: string
+                          type: array
+                      required:
+                      - name
+                      type: object
+                    type: array
                   docker:
                     items:
                       properties:
@@ -90,19 +124,6 @@ spec:
                           type: array
                       required:
                       - os
-                      type: object
-                    type: array
-                  items:
-                    items:
-                      properties:
-                        name:
-                          type: string
-                        versionRange:
-                          items:
-                            type: string
-                          type: array
-                      required:
-                      - name
                       type: object
                     type: array
                 type: object

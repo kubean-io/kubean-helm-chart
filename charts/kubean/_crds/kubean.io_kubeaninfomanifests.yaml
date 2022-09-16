@@ -6,14 +6,14 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: kubeanclusterconfigs.kubean.io
+  name: kubeaninfomanifests.kubean.io
 spec:
   group: kubean.io
   names:
-    kind: KubeanClusterConfig
-    listKind: KubeanClusterConfigList
-    plural: kubeanclusterconfigs
-    singular: kubeanclusterconfig
+    kind: KubeanInfoManifest
+    listKind: KubeanInfoManifestList
+    plural: kubeaninfomanifests
+    singular: kubeaninfomanifest
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -38,26 +38,6 @@ spec:
             type: object
           spec:
             properties:
-              airGapConfig:
-                properties:
-                  filesRepo:
-                    type: string
-                  hostsMap:
-                    items:
-                      properties:
-                        address:
-                          type: string
-                        domain:
-                          type: string
-                      type: object
-                    type: array
-                  registryRepo:
-                    type: string
-                  yumRepo:
-                    items:
-                      type: string
-                    type: array
-                type: object
               components:
                 items:
                   properties:
@@ -91,14 +71,32 @@ spec:
               kubeanVersion:
                 description: KubeanVersion , the tag of kubean-io
                 type: string
-              kubesprayImage:
-                type: string
               kubesprayVersion:
                 type: string
+              localService:
+                properties:
+                  filesRepo:
+                    type: string
+                  hostsMap:
+                    items:
+                      properties:
+                        address:
+                          type: string
+                        domain:
+                          type: string
+                      type: object
+                    type: array
+                  registryRepo:
+                    type: string
+                  yumRepo:
+                    items:
+                      type: string
+                    type: array
+                type: object
             type: object
           status:
             properties:
-              airGap:
+              localAvailable:
                 properties:
                   components:
                     items:
@@ -126,6 +124,8 @@ spec:
                       - os
                       type: object
                     type: array
+                  kubesprayImage:
+                    type: string
                 type: object
             type: object
         required:

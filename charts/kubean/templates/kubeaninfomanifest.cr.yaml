@@ -1,12 +1,12 @@
 apiVersion: "kubean.io/v1alpha1"
 kind: "KubeanInfoManifest"
 metadata:
-  name: "kubeaninfomanifest-v0-2-4"
+  name: "kubeaninfomanifest-v0-2-5"
   annotations:
     "helm.sh/hook": "post-install"
 spec:
-  kubesprayVersion: "023b163"
-  kubeanVersion: "v0.2.4"
+  kubesprayVersion: "1b3c2da"
+  kubeanVersion: "v0.2.5"
   docker:
     - os: "redhat-7"
       defaultVersion: "20.10"
@@ -62,13 +62,17 @@ spec:
         - "1.6.7"
         - "1.6.8"
     - name: "kube"
-      defaultVersion: "v1.24.4"
+      defaultVersion: "v1.24.6"
       versionRange:
+        - "v1.24.6"
+        - "v1.24.5"
         - "v1.24.4"
         - "v1.24.3"
         - "v1.24.2"
         - "v1.24.1"
         - "v1.24.0"
+        - "v1.23.12"
+        - "v1.23.11"
         - "v1.23.10"
         - "v1.23.9"
         - "v1.23.8"
@@ -80,6 +84,8 @@ spec:
         - "v1.23.2"
         - "v1.23.1"
         - "v1.23.0"
+        - "v1.22.15"
+        - "v1.22.14"
         - "v1.22.13"
         - "v1.22.12"
         - "v1.22.11"
@@ -101,11 +107,10 @@ spec:
         - "v3.22.4"
         - "v3.21.6"
     - name: "cilium"
-      defaultVersion: "v1.11.7"
+      defaultVersion: "v1.12.1"
       versionRange: []
     - name: "etcd"
       defaultVersion: "v3.5.4"
       versionRange:
         - "v3.5.3"
         - "v3.5.4"
-status: ""

@@ -1,12 +1,12 @@
 apiVersion: "kubean.io/v1alpha1"
 kind: "KubeanInfoManifest"
 metadata:
-  name: "kubeaninfomanifest-v0-2-5"
+  name: "kubeaninfomanifest-v0-2-6"
   annotations:
     "helm.sh/hook": "post-install"
 spec:
-  kubesprayVersion: "1b3c2da"
-  kubeanVersion: "v0.2.5"
+  kubesprayVersion: "841e2f4"
+  kubeanVersion: "v0.2.6"
   docker:
     - os: "redhat-7"
       defaultVersion: "20.10"
@@ -84,22 +84,6 @@ spec:
         - "v1.23.2"
         - "v1.23.1"
         - "v1.23.0"
-        - "v1.22.15"
-        - "v1.22.14"
-        - "v1.22.13"
-        - "v1.22.12"
-        - "v1.22.11"
-        - "v1.22.10"
-        - "v1.22.9"
-        - "v1.22.8"
-        - "v1.22.7"
-        - "v1.22.6"
-        - "v1.22.5"
-        - "v1.22.4"
-        - "v1.22.3"
-        - "v1.22.2"
-        - "v1.22.1"
-        - "v1.22.0"
     - name: "calico"
       defaultVersion: "v3.23.3"
       versionRange:

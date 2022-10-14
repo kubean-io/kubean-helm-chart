@@ -1,12 +1,10 @@
 apiVersion: "kubean.io/v1alpha1"
 kind: "KubeanInfoManifest"
 metadata:
-  name: "kubeaninfomanifest-v0-2-7"
-  annotations:
-    "helm.sh/hook": "post-install"
+  name: "kubeaninfomanifest-v0-3-0"
 spec:
-  kubesprayVersion: "4189008"
-  kubeanVersion: "v0.2.7"
+  kubesprayVersion: "131bd93"
+  kubeanVersion: "v0.3.0"
   docker:
     - os: "redhat-7"
       defaultVersion: "20.10"

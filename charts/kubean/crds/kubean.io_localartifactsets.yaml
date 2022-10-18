@@ -6,14 +6,14 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: kubeanofflineversions.kubean.io
+  name: localartifactsets.kubean.io
 spec:
   group: kubean.io
   names:
-    kind: KuBeanOfflineVersion
-    listKind: KuBeanOfflineVersionList
-    plural: kubeanofflineversions
-    singular: kubeanofflineversion
+    kind: LocalArtifactSet
+    listKind: LocalArtifactSetList
+    plural: localartifactsets
+    singular: localartifactset
   scope: Cluster
   versions:
   - additionalPrinterColumns:

@@ -1,10 +1,10 @@
 apiVersion: "kubean.io/v1alpha1"
-kind: "KubeanInfoManifest"
+kind: "Manifest"
 metadata:
-  name: "kubeaninfomanifest-v0-3-1"
+  name: "kubeaninfomanifest-v0-3-2"
 spec:
-  kubesprayVersion: "23716b0"
-  kubeanVersion: "v0.3.1"
+  kubesprayVersion: "1cc0f3c"
+  kubeanVersion: "v0.3.2"
   docker:
     - os: "redhat-7"
       defaultVersion: "20.10"
@@ -60,11 +60,13 @@ spec:
         - "1.6.7"
         - "1.6.8"
     - name: "kube"
-      defaultVersion: "v1.24.6"
+      defaultVersion: "v1.24.7"
       versionRange:
+        - "v1.25.3"
         - "v1.25.2"
         - "v1.25.1"
         - "v1.25.0"
+        - "v1.24.7"
         - "v1.24.6"
         - "v1.24.5"
         - "v1.24.4"
@@ -72,6 +74,7 @@ spec:
         - "v1.24.2"
         - "v1.24.1"
         - "v1.24.0"
+        - "v1.23.13"
         - "v1.23.12"
         - "v1.23.11"
         - "v1.23.10"

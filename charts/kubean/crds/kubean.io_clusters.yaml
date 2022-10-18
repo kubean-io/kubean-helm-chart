@@ -6,14 +6,14 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: kubeanclusters.kubean.io
+  name: clusters.kubean.io
 spec:
   group: kubean.io
   names:
-    kind: KuBeanCluster
-    listKind: KuBeanClusterList
-    plural: kubeanclusters
-    singular: kubeancluster
+    kind: Cluster
+    listKind: ClusterList
+    plural: clusters
+    singular: cluster
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -23,8 +23,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: KuBeanCluster represents the desire state and status of a member
-          cluster.
+        description: Cluster represents the desire state and status of a member cluster.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -98,7 +97,7 @@ spec:
                 items:
                   properties:
                     clusterOps:
-                      description: ClusterOps refers to the name of KuBeanClusterOps.
+                      description: ClusterOps refers to the name of ClusterOperation.
                       type: string
                     endTime:
                       format: date-time

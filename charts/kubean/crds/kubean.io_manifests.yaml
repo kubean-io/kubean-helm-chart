@@ -6,14 +6,14 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: kubeaninfomanifests.kubean.io
+  name: manifests.kubean.io
 spec:
   group: kubean.io
   names:
-    kind: KubeanInfoManifest
-    listKind: KubeanInfoManifestList
-    plural: kubeaninfomanifests
-    singular: kubeaninfomanifest
+    kind: Manifest
+    listKind: ManifestList
+    plural: manifests
+    singular: manifest
   scope: Cluster
   versions:
   - additionalPrinterColumns:

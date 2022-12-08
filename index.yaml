@@ -3,6 +3,17 @@ entries:
   kubean:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2022-12-08T03:42:15.419374565Z"
+    description: A Helm chart for kubean
+    digest: 0f48909c66bffbed6f2fa098969b1e234bbd4313b6caecf533219b1a5a19578c
+    icon: https://avatars.githubusercontent.com/u/108458246
+    name: kubean
+    type: application
+    urls:
+    - https://github.com/kubean-io/kubean-helm-chart/releases/download/kubean-v0.4.1-rc8/kubean-v0.4.1-rc8.tgz
+    version: v0.4.1-rc8
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2022-12-07T11:42:19.050315259Z"
     description: A Helm chart for kubean
     digest: 249b8a94e2fd87e1dd5e769cca3ff99b56006f45e1d3dfe7cd861af3808da4f0
@@ -386,4 +397,4 @@ entries:
     urls:
     - https://github.com/kubean-io/kubean-helm-chart/releases/download/kubean-v0.0.0/kubean-v0.0.0.tgz
     version: v0.0.0
-generated: "2022-12-07T11:42:19.050723264Z"
+generated: "2022-12-08T03:42:15.419862989Z"

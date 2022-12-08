@@ -1,10 +1,10 @@
 apiVersion: "kubean.io/v1alpha1"
 kind: "Manifest"
 metadata:
-  name: "kubeaninfomanifest-v0-4-1-rc7"
+  name: "kubeaninfomanifest-v0-4-1-rc8"
 spec:
   kubesprayVersion: "09748e8"
-  kubeanVersion: "v0.4.1-rc7"
+  kubeanVersion: "v0.4.1-rc8"
   docker:
     - os: "redhat-7"
       defaultVersion: "20.10"

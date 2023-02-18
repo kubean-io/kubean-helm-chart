@@ -67,3 +67,37 @@ $ kubectl delete crd clusters.kubean.io
 $ kubectl delete crd manifests.kubean.io
 $ kubectl delete crd localartifactsets.kubean.io
 ```
+
+## Parameters
+**kubeanOperator parameters**
+
+| Name	                       | Description	                                                         | Value                       | 
+|-----------------------------|----------------------------------------------------------------------|-----------------------------|
+| replicaCount	               | Number of replicas	                                                  | 1	                          |
+| nameOverride                | Override the name of the chart used to generate resource names	      | ""	                         |
+| fullnameOverride            | Override the full name of the chart used to generate resource names	 | ""	                         |
+| podAnnotations              | Annotations to be added to the pod	                                  | {}	                         |
+| podSecurityContext          | Security context for the pod	                                        | {}	                         |
+| securityContext	            | Security context for the container	                                  | {}	                         |
+| serviceAccount.create	      | Create a service account	                                            | true                        |
+| serviceAccount.annotations	 | Annotations to be added to the service account	                      | {}                          |
+| serviceAccount.name	        | Name of the service account to use	                                  | ""                          |
+| image.registry	             | Image registry	                                                      | "ghcr.io"                   |
+| image.repository	           | Image repository	                                                    | "kubean-io/kubean-operator" |
+| image.tag	                  | Image tag	                                                           | "v0.4.4-rc1"                |
+| image.pullPolicy	           | Image pull policy	                                                   | "IfNotPresent"              |
+| imagePullSecrets	           | Image pull secrets	                                                  | []                          |
+| service.type	               | Service type	                                                        | "ClusterIP"                 |
+| service.port	               | Service port	                                                        | 80                          |
+| resources	                  | limits and request setting	                                          | {}                          |
+| nodeSelector	               | Node selector	                                                       | {}                          |
+| tolerations	                | Tolerations	                                                         | []                          |
+| configMap.BACKEND_LIMIT     | The maximum number of concurrent backend requests.                   | 10                          |
+
+**sprayJob parameters**
+
+| Name	             | Description	      | Value                 |
+|-------------------|-------------------|-----------------------|
+| image.registry	   | Image registry	   | "ghcr.io"             |
+| image.repository	 | Image repository	 | "kubean-io/spray-job" |
+| image.tag	        | Image tag	        | "v0.4.4-rc1"          |

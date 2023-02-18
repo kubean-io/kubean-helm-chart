@@ -57,6 +57,10 @@ kubeanOperator:
   nodeSelector: {}
   tolerations: []
   affinity: {}
+
+  ## define kubean-operator configMap
+  configMap:
+    BACKEND_LIMIT: "10"
 ## define spray-job configuration
 sprayJob:
   ## define spray-job image

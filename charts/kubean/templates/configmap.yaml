@@ -7,4 +7,6 @@ metadata:
   labels:
   {{- include "kubean.labels" . | nindent 4}}
 data:
-  BACKEND_LIMIT: "10"
+  {{- range $key, $value := .Values.kubeanOperator.configMap }}
+  {{ $key }}: {{ $value | quote }}
+  {{- end }}

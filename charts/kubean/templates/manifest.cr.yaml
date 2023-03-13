@@ -3,7 +3,7 @@ kind: "Manifest"
 metadata:
   name: "kubeaninfomanifest-v0-4-5-rc3"
 spec:
-  kubesprayVersion: "7747ff2"
+  kubesprayVersion: "99115ad"
   kubeanVersion: "v0.4.5-rc3"
   docker:
     - os: "redhat-7"

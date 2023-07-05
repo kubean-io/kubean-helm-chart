@@ -1,10 +1,10 @@
 apiVersion: "kubean.io/v1alpha1"
 kind: "Manifest"
 metadata:
-  name: "kubeaninfomanifest-v0-6-6"
+  name: "kubeaninfomanifest-v0-7-0"
 spec:
-  kubesprayVersion: "eb31653"
-  kubeanVersion: "v0.6.6"
+  kubesprayVersion: "f8b93fa88a28042510ebec7587937c66786573b9"
+  kubeanVersion: "v0.7.0"
   docker:
     - os: "redhat-7"
       defaultVersion: "20.10"
@@ -118,7 +118,7 @@ spec:
         - "v3.23.3"
         - "v3.22.4"
     - name: "cilium"
-      defaultVersion: "v1.13.3"
+      defaultVersion: "v1.13.4"
       versionRange: []
     - name: "flannel"
       versionRange: []

@@ -1,38 +1,44 @@
 apiVersion: "kubean.io/v1alpha1"
 kind: "Manifest"
 metadata:
-  name: "manifest-v0-13-0"
+  name: "manifest-v0-13-1"
   labels:
     kubean.io/sprayRelease: "master"
 spec:
-  kubesprayVersion: "0dbde7536fe965640888827d69c33788bb33a924"
-  kubeanVersion: "v0.13.0"
+  kubesprayVersion: "989ba207e9da2e1364f375450561d08af80c8535"
+  kubeanVersion: "v0.13.1"
   docker:
     - os: "redhat-7"
-      defaultVersion: "20.10"
+      defaultVersion: "24.0"
       versionRange:
         - latest
         - "18.09"
         - "19.03"
         - "20.10"
+        - "23.0"
+        - "24.0"
         - stable
         - edge
     - os: "debian"
-      defaultVersion: "20.10"
+      defaultVersion: "24.0"
       versionRange:
         - latest
         - "18.09"
         - "19.03"
         - "20.10"
+        - "23.0"
+        - "24.0"
         - stable
         - edge
     - os: "ubuntu"
-      defaultVersion: "20.10"
+      defaultVersion: "24.0"
       versionRange:
         - latest
         - "18.09"
         - "19.03"
         - "20.10"
+        - "23.0"
+        - "24.0"
         - stable
         - edge
   components:

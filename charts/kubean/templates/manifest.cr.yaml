@@ -2,12 +2,12 @@
 apiVersion: kubean.io/v1alpha1
 kind: Manifest
 metadata:
-  name: "manifest-v0-14-0"
+  name: "manifest-v0-13-10"
   labels:
     kubean.io/sprayRelease: master
 spec:
-  kubesprayVersion: "fdf5988ea8d3d1aea51dc3ea669b9337cba4988f"
-  kubeanVersion: "v0.14.0"
+  kubesprayVersion: "989ba207e9da2e1364f375450561d08af80c8535"
+  kubeanVersion: "v0.13.10"
   docker:
     - os: redhat-7
       defaultVersion: "24.0"
@@ -66,15 +66,16 @@ spec:
         - "v1.1.10"
         - "v1.1.9"
         - "v1.1.8"
+        - "v1.1.7"
+        - "v1.1.6"
+        - "v1.1.5"
+        - "v1.1.4"
+        - "v1.1.3"
     - name: kube
       defaultVersion: "v1.27.5"
       versionRange:
-        - "v1.29.3"
-        - "v1.29.2"
         - "v1.29.1"
         - "v1.29.0"
-        - "v1.28.8"
-        - "v1.28.7"
         - "v1.28.6"
         - "v1.28.5"
         - "v1.28.4"
@@ -82,8 +83,6 @@ spec:
         - "v1.28.2"
         - "v1.28.1"
         - "v1.28.0"
-        - "v1.27.12"
-        - "v1.27.11"
         - "v1.27.10"
         - "v1.27.9"
         - "v1.27.8"
@@ -98,19 +97,16 @@ spec:
     - name: cni
       defaultVersion: "v1.3.0"
       versionRange:
-        - "v1.4.0"
         - "v1.3.0"
         - "v1.2.0"
         - "v1.1.1"
         - "v1.1.0"
         - "v1.0.1"
         - "v1.0.0"
+        - "v0.9.1"
     - name: calico
-      defaultVersion: "v3.27.2"
+      defaultVersion: "v3.26.4"
       versionRange:
-        - "v3.27.2"
-        - "v3.27.1"
-        - "v3.27.0"
         - "v3.26.4"
         - "v3.26.3"
         - "v3.26.2"
@@ -128,6 +124,13 @@ spec:
         - "v3.24.0"
         - "v3.23.5"
         - "v3.23.4"
+        - "v3.23.3"
+        - "v3.23.2"
+        - "v3.23.1"
+        - "v3.23.0"
+        - "v3.22.5"
+        - "v3.22.4"
+        - "v3.22.3"
     - name: containerd
       defaultVersion: "1.7.13"
       versionRange:
@@ -145,9 +148,7 @@ spec:
         - "1.7.2"
         - "1.7.1"
         - "1.7.0"
-        - "1.6.29"
         - "1.6.28"
-        - "1.6.27"
         - "1.6.26"
         - "1.6.25"
         - "1.6.24"
@@ -161,3 +162,22 @@ spec:
         - "1.6.16"
         - "1.6.15"
         - "1.6.14"
+        - "1.6.13"
+        - "1.6.12"
+        - "1.6.11"
+        - "1.6.10"
+        - "1.6.9"
+        - "1.6.8"
+        - "1.6.7"
+        - "1.6.6"
+        - "1.6.5"
+        - "1.6.4"
+        - "1.6.3"
+        - "1.6.2"
+        - "1.6.1"
+        - "1.6.0"
+        - "1.5.18"
+        - "1.5.17"
+        - "1.5.16"
+        - "1.5.15"
+        - "1.5.14"

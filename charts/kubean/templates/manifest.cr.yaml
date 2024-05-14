@@ -2,12 +2,12 @@
 apiVersion: kubean.io/v1alpha1
 kind: Manifest
 metadata:
-  name: "manifest-v0-15-1"
+  name: "manifest-v0-15-2"
   labels:
     kubean.io/sprayRelease: master
 spec:
   kubesprayVersion: "975362249c0fe1ae2402fd07e409f4c670c2169b"
-  kubeanVersion: "v0.15.1"
+  kubeanVersion: "v0.15.2"
   docker:
     - os: redhat-7
       defaultVersion: "24.0"

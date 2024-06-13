@@ -2,45 +2,54 @@
 apiVersion: kubean.io/v1alpha1
 kind: Manifest
 metadata:
-  name: "manifest-v0-15-3"
+  name: "manifest-v0-16-0"
   labels:
     kubean.io/sprayRelease: master
 spec:
-  kubesprayVersion: "fe1a2d5dd9e09eed66070414ebc274ae13e25f22"
-  kubeanVersion: "v0.15.3"
+  kubesprayVersion: "0c8d29462d2940e1d8c0849f11d178e7be83d884"
+  kubeanVersion: "v0.16.0"
   docker:
     - os: redhat-7
-      defaultVersion: "24.0"
+      defaultVersion: "26.1"
       versionRange:
         - "18.09"
         - "19.03"
         - "20.10"
         - "23.0"
         - "24.0"
+        - "26.0"
+        - "26.1"
     - os: redhat
-      defaultVersion: "24.0"
+      defaultVersion: "26.1"
       versionRange:
         - "18.09"
         - "19.03"
         - "20.10"
         - "23.0"
         - "24.0"
+        - "26.0"
+        - "26.1"
     - os: debian
-      defaultVersion: "24.0"
+      defaultVersion: "26.1"
       versionRange:
         - "18.09"
         - "19.03"
         - "20.10"
         - "23.0"
         - "24.0"
+        - "25.0"
+        - "26.0"
+        - "26.1"
     - os: ubuntu
-      defaultVersion: "24.0"
+      defaultVersion: "26.1"
       versionRange:
         - "18.09"
         - "19.03"
         - "20.10"
         - "23.0"
         - "24.0"
+        - "26.0"
+        - "26.1"
     - os: kylin
       defaultVersion: "19.03"
       versionRange:
@@ -48,6 +57,8 @@ spec:
         - "19.03"
         - "23.0"
         - "24.0"
+        - "26.0"
+        - "26.1"
   components:
     - name: cilium
       defaultVersion: "v1.15.4"
@@ -67,13 +78,15 @@ spec:
         - "v1.1.9"
         - "v1.1.8"
     - name: kube
-      defaultVersion: "v1.28.9"
+      defaultVersion: "v1.29.5"
       versionRange:
+        - "v1.29.5"
         - "v1.29.4"
         - "v1.29.3"
         - "v1.29.2"
         - "v1.29.1"
         - "v1.29.0"
+        - "v1.28.10"
         - "v1.28.9"
         - "v1.28.8"
         - "v1.28.7"
@@ -84,20 +97,6 @@ spec:
         - "v1.28.2"
         - "v1.28.1"
         - "v1.28.0"
-        - "v1.27.13"
-        - "v1.27.12"
-        - "v1.27.11"
-        - "v1.27.10"
-        - "v1.27.9"
-        - "v1.27.8"
-        - "v1.27.7"
-        - "v1.27.6"
-        - "v1.27.5"
-        - "v1.27.4"
-        - "v1.27.3"
-        - "v1.27.2"
-        - "v1.27.1"
-        - "v1.27.0"
     - name: cni
       defaultVersion: "v1.3.0"
       versionRange:

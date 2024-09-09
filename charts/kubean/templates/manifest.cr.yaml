@@ -2,14 +2,14 @@
 apiVersion: kubean.io/v1alpha1
 kind: Manifest
 metadata:
-  name: "manifest-v0-18-5"
+  name: "manifest-v0-19-0"
   labels:
     kubean.io/sprayRelease: master
   annotations:
     helm.sh/resource-policy: keep
 spec:
-  kubesprayVersion: "2f84567a6911b7258d17a967081b1d464990473d"
-  kubeanVersion: "v0.18.5"
+  kubesprayVersion: "4b324cb0f0be82a5b2d63c553888ff29e206017f"
+  kubeanVersion: "v0.19.0"
   docker:
     - os: redhat-7
       defaultVersion: "26.1"
@@ -81,7 +81,7 @@ spec:
         - "v1.1.9"
         - "v1.1.8"
     - name: kube
-      defaultVersion: "v1.29.5"
+      defaultVersion: "v1.30.4"
       versionRange:
         - "v1.30.4"
         - "v1.30.3"
@@ -120,8 +120,10 @@ spec:
         - "v1.0.1"
         - "v1.0.0"
     - name: calico
-      defaultVersion: "v3.27.3"
+      defaultVersion: "v3.28.1"
       versionRange:
+        - "v3.28.1"
+        - "v3.28.0"
         - "v3.27.3"
         - "v3.27.2"
         - "v3.27.1"
@@ -144,8 +146,9 @@ spec:
         - "v3.23.5"
         - "v3.23.4"
     - name: containerd
-      defaultVersion: "1.7.20"
+      defaultVersion: "1.7.21"
       versionRange:
+        - "1.7.21"
         - "1.7.20"
         - "1.7.19"
         - "1.7.18"

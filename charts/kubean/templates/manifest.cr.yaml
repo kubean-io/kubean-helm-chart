@@ -2,14 +2,14 @@
 apiVersion: kubean.io/v1alpha1
 kind: Manifest
 metadata:
-  name: "manifest-v0-23-3"
+  name: "manifest-v0-22-5"
   labels:
     kubean.io/sprayRelease: master
   annotations:
     helm.sh/resource-policy: keep
 spec:
-  kubesprayVersion: "e0a141ab12b293b2cc2644d58330ae3d50f4f85f"
-  kubeanVersion: "v0.23.3"
+  kubesprayVersion: "d173f1d9514ba9fad30310bfe65109e87345ed87"
+  kubeanVersion: "v0.22.5"
   docker:
     - os: redhat-7
       defaultVersion: "26.1"
@@ -72,14 +72,8 @@ spec:
       defaultVersion: "v1.12.21"
       versionRange: []
     - name: runc
-      defaultVersion: "v1.2.4"
+      defaultVersion: "v1.1.14"
       versionRange:
-        - "v1.2.4"
-        - "v1.2.3"
-        - "v1.2.2"
-        - "v1.2.1"
-        - "v1.2.0"
-        - "v1.1.15"
         - "v1.1.14"
         - "v1.1.13"
         - "v1.1.12"
@@ -90,13 +84,10 @@ spec:
     - name: kube
       defaultVersion: "v1.30.5"
       versionRange:
-        - "v1.32.0"
-        - "v1.31.4"
         - "v1.31.3"
         - "v1.31.2"
         - "v1.31.1"
         - "v1.31.0"
-        - "v1.30.8"
         - "v1.30.7"
         - "v1.30.6"
         - "v1.30.5"
@@ -105,6 +96,18 @@ spec:
         - "v1.30.2"
         - "v1.30.1"
         - "v1.30.0"
+        - "v1.29.11"
+        - "v1.29.10"
+        - "v1.29.9"
+        - "v1.29.8"
+        - "v1.29.7"
+        - "v1.29.6"
+        - "v1.29.5"
+        - "v1.29.4"
+        - "v1.29.3"
+        - "v1.29.2"
+        - "v1.29.1"
+        - "v1.29.0"
     - name: cni
       defaultVersion: "v1.4.0"
       versionRange:
@@ -116,26 +119,34 @@ spec:
         - "v1.0.1"
         - "v1.0.0"
     - name: calico
-      defaultVersion: "v3.29.1"
+      defaultVersion: "v3.28.1"
       versionRange:
-        - "v3.29.1"
-        - "v3.29.0"
-        - "v3.28.2"
         - "v3.28.1"
         - "v3.28.0"
-        - "v3.27.5"
-        - "v3.27.4"
         - "v3.27.3"
         - "v3.27.2"
         - "v3.27.1"
         - "v3.27.0"
+        - "v3.26.4"
+        - "v3.26.3"
+        - "v3.26.2"
+        - "v3.26.1"
+        - "v3.26.0"
+        - "v3.25.2"
+        - "v3.25.1"
+        - "v3.25.0"
+        - "v3.24.6"
+        - "v3.24.5"
+        - "v3.24.4"
+        - "v3.24.3"
+        - "v3.24.2"
+        - "v3.24.1"
+        - "v3.24.0"
+        - "v3.23.5"
+        - "v3.23.4"
     - name: containerd
-      defaultVersion: "2.0.2"
+      defaultVersion: "1.7.23"
       versionRange:
-        - "2.0.2"
-        - "2.0.1"
-        - "2.0.0"
-        - "1.7.24"
         - "1.7.23"
         - "1.7.22"
         - "1.7.21"

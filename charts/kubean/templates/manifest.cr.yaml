@@ -2,14 +2,14 @@
 apiVersion: kubean.io/v1alpha1
 kind: Manifest
 metadata:
-  name: "manifest-v0-25-1"
+  name: "manifest-v0-25-2"
   labels:
     kubean.io/sprayRelease: master
   annotations:
     helm.sh/resource-policy: keep
 spec:
-  kubesprayVersion: "df241800ce6f3653296949275421d4784d2e9fef"
-  kubeanVersion: "v0.25.1"
+  kubesprayVersion: "63cdf87915421dda5955281f38401fd1b55b230b"
+  kubeanVersion: "v0.25.2"
   docker:
     - os: redhat
       defaultVersion: "28.0"
@@ -74,7 +74,7 @@ spec:
         - "26.1"
   components:
     - name: cilium
-      defaultVersion: "1.15.9"
+      defaultVersion: "1.17.3"
       versionRange: []
     - name: flannel
       defaultVersion: "0.22.0"
@@ -103,11 +103,13 @@ spec:
     - name: kube
       defaultVersion: "1.31.6"
       versionRange:
+        - "1.32.5"
         - "1.32.4"
         - "1.32.3"
         - "1.32.2"
         - "1.32.1"
         - "1.32.0"
+        - "1.31.9"
         - "1.31.8"
         - "1.31.7"
         - "1.31.6"
@@ -117,6 +119,7 @@ spec:
         - "1.31.2"
         - "1.31.1"
         - "1.31.0"
+        - "1.30.13"
         - "1.30.12"
         - "1.30.11"
         - "1.30.10"

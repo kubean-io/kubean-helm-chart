@@ -49,7 +49,7 @@ kubeanOperator:
     # -- kubean-operator image registry
     repository: kubean-io/kubean-operator
     # -- the image tag whose default is the chart appVersion
-    tag: "v0.26.2"
+    tag: "v0.26.3"
     # -- Pull policy of image
     pullPolicy: IfNotPresent
     # -- Pull secrets of image
@@ -60,18 +60,13 @@ kubeanOperator:
     type: ClusterIP
     port: 80
   ## @param kubeanOperator.resources kubean-operator resources
-  resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-
+  resources:
+    requests:
+      cpu: 100m
+      memory: 50Mi
+    limits:
+      cpu: 100m
+      memory: 200Mi
   ## @param kubeanOperator.nodeSelector kubean-operator node selector
   nodeSelector: {}
   ## @param kubeanOperator.tolerations kubean-operator tolerations
@@ -103,7 +98,15 @@ kubeanAdmission:
     # -- spray-job image registry
     repository: kubean-io/kubean-admission
     # -- the image tag whose default is the chart appVersion
-    tag: "v0.26.2"
+    tag: "v0.26.3"
+  ## @param kubeanAdmission.resources kubean-admission resources
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
+    limits:
+      cpu: 100m
+      memory: 200Mi
 ## @section sprayJob parameters
 ## @param sprayJob.image.registry spray-job image registry
 ## @param sprayJob.image.repository spray-job image repository
@@ -116,4 +119,4 @@ sprayJob:
     # -- spray-job image registry
     repository: kubean-io/spray-job
     # -- the image tag whose default is the chart appVersion
-    tag: "v0.26.2"
+    tag: "v0.26.3"

@@ -49,7 +49,7 @@ kubeanOperator:
     # -- kubean-operator image registry
     repository: kubean-io/kubean-operator
     # -- the image tag whose default is the chart appVersion
-    tag: "v0.29.1"
+    tag: "v0.30.0"
     # -- Pull policy of image
     pullPolicy: IfNotPresent
     # -- Pull secrets of image
@@ -101,7 +101,7 @@ kubeanAdmission:
     # -- spray-job image registry
     repository: kubean-io/kubean-admission
     # -- the image tag whose default is the chart appVersion
-    tag: "v0.29.1"
+    tag: "v0.30.0"
   ## @param kubeanAdmission.resources kubean-admission resources
   resources:
     requests:
@@ -122,4 +122,4 @@ sprayJob:
     # -- spray-job image registry
     repository: kubean-io/spray-job
     # -- the image tag whose default is the chart appVersion
-    tag: "v0.29.1"
+    tag: "v0.30.0"

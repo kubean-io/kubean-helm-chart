@@ -2,14 +2,14 @@
 apiVersion: kubean.io/v1alpha1
 kind: Manifest
 metadata:
-  name: "manifest-v0-30-0"
+  name: "manifest-v0-30-1"
   labels:
     kubean.io/sprayRelease: master
   annotations:
     helm.sh/resource-policy: keep
 spec:
   kubesprayVersion: "5dce75d29b0d292080f9005e1d6e5c1f48cd1171"
-  kubeanVersion: "v0.30.0"
+  kubeanVersion: "v0.30.1"
   docker:
     - os: redhat
       defaultVersion: "28.3"

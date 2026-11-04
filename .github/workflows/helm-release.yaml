@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Chart version to publish to release.daocloud.io (default: version in charts/kubean/Chart.yaml)"
+        required: false
 
 jobs:
   release:
@@ -31,3 +36,51 @@ jobs:
         uses: helm/chart-releaser-action@v1.4.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+  publish-daocloud:
+    # Push the exact package attached to the GitHub release to both the legacy
+    # ChartMuseum repo and the OCI registry of the release.daocloud.io community project.
+    needs: release
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    env:
+      REGISTRY: release.daocloud.io
+      PROJECT: community
+      HARBOR_USER: ${{ secrets.RELEASE_DAOCLOUD_USER }}
+      HARBOR_PASSWORD: ${{ secrets.RELEASE_DAOCLOUD_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.19.0
+
+      - name: Download released chart package
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          VERSION="${INPUT_VERSION:-$(yq '.version' charts/kubean/Chart.yaml)}"
+          gh release download "kubean-${VERSION}" --pattern "kubean-${VERSION}.tgz"
+          echo "VERSION=${VERSION}" >> "$GITHUB_ENV"
+
+      - name: Push to OCI registry
+        run: |
+          echo "$HARBOR_PASSWORD" | helm registry login "$REGISTRY" -u "$HARBOR_USER" --password-stdin
+          if helm show chart "oci://${REGISTRY}/${PROJECT}/kubean" --version "$VERSION" >/dev/null 2>&1; then
+            echo "oci://${REGISTRY}/${PROJECT}/kubean:${VERSION} already exists, skip"
+            exit 0
+          fi
+          helm push "kubean-${VERSION}.tgz" "oci://${REGISTRY}/${PROJECT}"
+
+      - name: Push to ChartMuseum repo
+        run: |
+          API="https://${REGISTRY}/api/chartrepo/${PROJECT}/charts"
+          if [ "$(curl -s -o /dev/null -w '%{http_code}' "${API}/kubean/${VERSION}")" = "200" ]; then
+            echo "${REGISTRY}/chartrepo/${PROJECT} kubean ${VERSION} already exists, skip"
+            exit 0
+          fi
+          curl -fsS -u "${HARBOR_USER}:${HARBOR_PASSWORD}" -F "chart=@kubean-${VERSION}.tgz" "$API"

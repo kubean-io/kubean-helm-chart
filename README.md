@@ -39,6 +39,16 @@ You can run the following command to install kubean.
 $ helm install kubean kubean-io/kubean --create-namespace -n kubean-system
 ```
 
+The chart is also published to `release.daocloud.io`, both as a classic Helm repo and as an OCI artifact.
+``` bash
+# classic Helm repo
+$ helm repo add daocloud-community https://release.daocloud.io/chartrepo/community
+$ helm install kubean daocloud-community/kubean --create-namespace -n kubean-system
+
+# OCI
+$ helm install kubean oci://release.daocloud.io/community/kubean --version <version> --create-namespace -n kubean-system
+```
+
 View cluster information.
 ``` bash
 $ kubectl get kubeancluster
